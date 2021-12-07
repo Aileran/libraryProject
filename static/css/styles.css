@@ -13,13 +13,7 @@ form > .alert > ul > li{
 .btn-primary:hover, .btn-primary:focus, .btn-primary:active, .btn-primary.active, .open>.dropdown-toggle.btn-primary {
     color: #fff;
     background-color: #28a745;
-    border-color: #285e8e; /*set the color you want here*/
-}
-
-.btn-primary:hover, .btn-primary:focus, .btn-primary:active, .btn-primary.active, .open>.dropdown-toggle.btn-primary {
-    color: #fff;
-    background-color: #28a745;
-    border-color: #285e8e; /*set the color you want here*/
+    border-color: #285e8e;
 }
 
 .credits p {
@@ -33,4 +27,6 @@ form > .alert > ul > li{
 }
 
 
-#foobar { display: none }
+#foobar {
+    display: none;
+}

@@ -38,12 +38,5 @@ document.addEventListener('keydown', function(e) {
 });
 
 function activateCheats() {
-  // document.body.style.backgroundImage = "url('https://github.com/Aileran/curatorProject/blob/master/static/images/meme.gif')";
-  //
-  //  let audio = new Audio('audio/Sound6.mp3')
-  // audio.play();
-  //
-
-  // alert("Konami Code Accepted: Meme Engaged");
   window.location.href = 'https://www.youtube.com/watch?v=dQw4w9WgXcQ';
 }
