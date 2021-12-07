@@ -1,0 +1,18 @@
+{% extends 'library/base.html' %}
+{% load crispy_forms_filters %}
+{% block title %}
+    Movie Entry
+{% endblock %}
+
+{% block body %}
+    <h1>Enter Your Movie Details</h1>
+    <div>
+        <form method="post">
+            {% csrf_token %}
+            {{ form|crispy }}
+            <input id="Play_Button" class="btn btn-primary btn-lg" type="submit" value="Enter">
+            <a class="btn btn-primary btn-lg" href="{% url 'movie' %}" role="button">Go back</a>
+        </form>
+    </div>
+
+{% endblock %}

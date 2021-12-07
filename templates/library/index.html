@@ -1,0 +1,38 @@
+{% extends 'library/base.html' %}
+{% load static %}
+{% block title %}
+    Index Page
+{% endblock %}
+
+{% block body %}
+
+    <div class="jumbotron">
+        <h1 class="display-4 text-capitalize">Hello, {{user.username}}!</h1>
+        <p class="lead">Welcome to Curator, CS 416's #1 rated movie, album, and book collection site!</p>
+        <hr class="my-4">
+    </div>
+
+    <div>
+        <div class="row">
+            <div class="col-md-4">
+                <a class="btn btn-primary btn-lg btn-block" href="{% url 'new_album' %}">Add to Your Album Collection</a>
+                <a href="{% url 'new_album' %}">
+                    <img class="img-fluid rounded" alt="book" src={% static 'images/album.jpg' %} >
+                </a>
+            </div>
+            <div class="col-md-4">
+                <a class="btn btn-primary btn-lg btn-block" href="{% url 'new_book' %}">Add to Your Book Collection</a>
+                <a href="{% url 'new_book' %}">
+                    <img class="img-fluid rounded" alt="book" src={% static 'images/book.jpg' %} >
+                </a>
+            </div>
+            <div class="col-md-4">
+                <a class="btn btn-primary btn-lg btn-block" href="{% url 'new_movie' %}">Add to Your Movie Collection</a>
+                <a href="{% url 'new_movie' %}">
+                    <img class="img-fluid rounded" alt="book" src={% static 'images/movie.jpg' %} >
+                </a>
+            </div>
+        </div>
+    </div>
+
+{% endblock %}

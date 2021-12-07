@@ -1,0 +1,17 @@
+{% extends 'library/base.html' %}
+{% load crispy_forms_filters %}
+{% block title %}
+    Album Entry
+{% endblock %}
+
+{% block body %}
+    <h1>Enter Your Album Details</h1>
+    <div>
+        <form method="post">
+            {% csrf_token %}
+            {{ form|crispy }}
+            <input id="Play_Button" class="btn btn-primary btn-lg" type="submit" value="Enter">
+            <a class="btn btn-primary btn-lg" href="{% url 'album' %}" role="button">Go back</a>
+        </form>
+    </div>
+{% endblock %}

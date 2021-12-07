@@ -1,0 +1,47 @@
+{% extends 'library/base.html' %}
+
+{% block title %}
+    Album Collection
+{% endblock %}
+
+{% block body %}
+
+    <div class="jumbotron">
+        <h1 class="display-4 text-capitalize">Hello, {{user.username}}!</h1>
+        <p class="lead">Welcome to your Album Collection!</p>
+        <hr class="my-4">
+    </div>
+
+    <div>
+        <form action="{%  url 'add_album' %}" method="post">
+            {% csrf_token %}
+            <div class="input-group mb-3">
+                <input type="text" class="form-control" placeholder="Enter Name of Album" name="title" required aria-label="title">
+                <div class="input-group-append">
+                    <button id="Play_Button" class="btn btn-primary" type="submit">ADD</button>
+                </div>
+            </div>
+        </form>
+    </div>
+
+    {% for Album in Albums %}
+        <div class="card">
+            <div class="row">
+                <div class="col-md-8">
+                    <div class="card-body">
+                        <h5 class="card-title">{{Album.title}}</h5>
+                        <p class="card-text">Artist: {{Album.artist}}</p>
+                        <p class="card-text">Label: {{Album.label}}</p>
+                        <p class="card-text">Genre: {{Album.genre}}</p>
+                        <a class="btn btn-primary btn-sm" href="{% url 'update_album' Album.id %}">Update</a>
+                        <a class="btn btn-danger btn-sm" href="{% url 'delete_album' Album.id %}">Delete</a>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <p class="card-text ">Comment: {{Album.comment}}</p>
+                </div>
+            </div>
+        </div>
+        <hr>
+    {% endfor %}
+{% endblock %}

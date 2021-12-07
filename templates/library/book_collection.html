@@ -1,0 +1,49 @@
+{% extends 'library/base.html' %}
+
+{% block title %}
+    Book Collection
+{% endblock %}
+
+{% block body %}
+
+    <div class="jumbotron">
+        <h1 class="display-4 text-capitalize">Hello, {{  user.username}}!</h1>
+        <p class="lead">Welcome to your Book Collection!</p>
+        <hr class="my-4">
+    </div>
+
+    <div>
+        <form action="{%  url 'add_book' %}" method="post">
+            {% csrf_token %}
+            <div class="input-group mb-3">
+                <input type="text" class="form-control" placeholder="Enter Name of Book" name="title" required aria-label="title">
+                <div class="input-group-append">
+                    <button id="Play_Button" class="btn btn-primary" type="submit">ADD</button>
+                </div>
+            </div>
+        </form>
+    </div>
+
+    {% for Book in Books %}
+        <div class="card">
+            <div class="row">
+                <div class="col-md-8">
+                    <div class="card-body">
+                        <h5 class="card-title">{{Book.title}}</h5>
+                        <p class="card-text">Author: {{Book.author}}</p>
+                        <p class="card-text">Publisher: {{Book.publisher}}</p>
+                        <p class="card-text">Genre: {{Book.genre}}</p>
+                        <a class="btn btn-primary btn-sm" href="{% url 'update_book' Book.id %}"> Update</a>
+                        <a class="btn btn-danger btn-sm" href="{% url 'delete_book' Book.id %}"> Delete</a>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <p class="card-text ">Comment: {{ Book.comment }}</p>
+                </div>
+            </div>
+        </div>
+        <hr>
+    {% endfor %}
+
+
+{% endblock %}

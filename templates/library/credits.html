@@ -1,0 +1,48 @@
+{% extends 'library/base.html' %}
+{% load static %}
+
+{% block title %}
+Credits
+{% endblock %}
+
+{% block body %}
+        <div class="jumbotron credits">
+        <h1 class="display-4">Credits</h1>
+        <hr class="my-4">
+        <p>This masterpiece before you is the culmination of Ian Tierney and Josh Schilling putting in maximum effort
+        to produce a web app as a final project for their Web Programming class CS 416 at CCSU with Professor Albayram.
+        No work had started until roughly a week before the due date when Josh, God bless the man, remarked to Ian that
+        maybe, just maybe, this project deserved their consideration. Sensing the wisdom in this, Ian vehemently
+        concurred, claiming they'd, "Bang the sucker out no problem", and with enough time to spare for a day trip to
+        Boston. Alas, day trips are out of the question what with Covid, but they did (debatably) finish the website in
+        time.</p>
+    </div>
+    <div>
+    </div>
+
+    <div class="credits card-deck">
+        <div class="row">
+            <div class="col-md-4 card">
+                <img class="card-img-top rounded" alt="ian" src="{% static 'images/ianprofile.jpg' %}">
+                <br>
+                <h4 class="card-text">Ian Tierney</h4>
+                <p class="card-text">Co-creator</p>
+                <p class="card-text">Getting actual use out of his dating profile pic for the first time ever</p>
+            </div>
+            <div class="col-md-4 card">
+                <img class="rounded card-img-top" alt="josh" src="{% static 'images/josh_profile.jpg' %}">
+                <br>
+                <h4 class="card-text">Josh Schilling</h4>
+                <p class="card-text">Co-creator</p>
+                <p class="card-text">So mysterious you can't prove he's not a genius playboy billionaire</p>
+            </div>
+            <div class="col-md-4 card">
+                <img class="rounded card-img-top" alt="yusuf" src="{% static 'images/yusufprofile.jpg' %}">
+                <br>
+                <h4 class="card-text">Yusuf Albayram</h4>
+                <p class="card-text">Professor</p>
+                <p class="card-text">Endless font of knowledge without whom none of this was possible</p>
+            </div>
+        </div>
+    </div>
+{% endblock %}

@@ -1,0 +1,15 @@
+{% extends 'library/base.html' %}
+
+{% block title %}
+    Delete
+{% endblock %}
+
+{% block body %}
+    <form action="{% url 'delete_album' album.id %}" method="post">
+        {% csrf_token %}
+        <h3>Are you sure that you want to delete "{{ album.title }}"?</h3>
+        <input class="btn btn-danger btn-lg" type="submit" value="Delete">
+        <a class="btn btn-primary btn-lg" href="{% url 'album' %}" role="button">Go back</a>
+    </form>
+
+{% endblock %}
