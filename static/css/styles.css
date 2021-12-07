@@ -26,3 +26,6 @@ form > .alert > ul > li{
     display: none;
 }
 
+.credits h4 {
+    text-align: center;
+}
