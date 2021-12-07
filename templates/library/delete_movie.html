@@ -7,8 +7,12 @@
 {% block body %}
     <form action="{% url 'delete_movie' movie.id %}" method="post">
         {% csrf_token %}
-        <h3>Are you sure that you want to delete "{{ movie.title }}"?</h3>
-        <input class="btn btn-danger btn-lg" type="submit" value="Delete">
-        <a class="btn btn-primary btn-lg" href="{% url 'movie' %}" role="button">Go back</a>
+        <div class="card">
+            <h6 class="card-header">Are you sure that you want to delete "{{movie.title}}" from your collection?</h6>
+            <div class="card-body">
+                <input class="btn btn-danger btn-lg" type="submit" value="Delete">
+                <a class="btn btn-primary btn-lg" href="{% url 'movie' %}" role="button">Go back</a>
+            </div>
+        </div>
     </form>
 {% endblock %}

@@ -9,7 +9,7 @@
     <div class="jumbotron">
         <h1 class="display-4 text-capitalize">Hello, {{user.username}}!</h1>
         <p class="lead">Welcome to your Movie Collection!</p>
-        <hr class="my-4">
+        <hr>
     </div>
 
     <div>
@@ -24,27 +24,30 @@
         </form>
     </div>
 
-
-    {% for Movie in Movies %}
-        <div class="card">
-            <div class="row">
-                <div class="col-md-8">
-                    <div class="card-body">
-                        <h5 class="card-title">{{Movie.title}}</h5>
-                        <p class="card-text">Director: {{Movie.director}}</p>
-                        <p class="card-text">Studio: {{Movie.studio}}</p>
-                        <p class="card-text">Genre: {{Movie.genre}}</p>
-                        <a class="btn btn-primary btn-sm" href="{% url 'update_movie' Movie.id %}">Update</a>
-                        <a class="btn btn-danger btn-sm" href="{% url 'delete_movie' Movie.id %}">Delete</a>
+    <div class="row justify-content-left">
+        {% for Movie in Movies %}
+            <div class="col-md-6 col-xl-4 mb-3">
+                <div class="card">
+                    <h5 class="card-header text-center">{{Movie.title}}</h5>
+                    <div class="row card-body">
+                        <div class="col-md-7 mb-3">
+                            <p class="card-text"><b>Director:</b> {{Movie.director}}</p>
+                            <p class="card-text"><b>Studio:</b> {{Movie.studio}}</p>
+                            <p class="card-text"><b>Genre:</b> {{Movie.genre}}</p>
+                        </div>
+                        <div class="col-md-5">
+                            <p><b>Comment:</b></p>
+                            <p class="card-text"> {{Movie.comment}}</p>
+                        </div>
+                        <div class="row card-body">
+                            <a class="btn btn-primary btn-sm m-1" href="{% url 'update_movie' Movie.id %}"> Update</a>
+                            <a class="btn btn-danger btn-sm m-1" href="{% url 'delete_movie' Movie.id %}"> Delete</a>
+                        </div>
                     </div>
                 </div>
-                <div class="col-md-4">
-                    <p class="card-text ">Comment: {{Movie.comment}}</p>
-                </div>
             </div>
-        </div>
-        <hr>
-    {% endfor %}
+        {% endfor %}
+    </div>
 
 
 {% endblock %}
